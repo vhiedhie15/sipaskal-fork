@@ -19,7 +19,8 @@ return new class extends Migration
             $table->char('nip',18);
             $table->char('nik',16);
             $table->string('nama');
-            $table->integer('no_hp');
+            // $table->integer('no_hp',15);
+            $table->char('no_hp',15);
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

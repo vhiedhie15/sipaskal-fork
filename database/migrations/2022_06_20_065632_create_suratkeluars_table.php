@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('tujuan_surat');
             $table->string('tembusan');
             $table->string('ket');
-            $table->integer('no_agenda');
+            $table->string('no_agenda');
             $table->unsignedInteger('id_status')->index();
             $table->unsignedInteger('id_create')->index();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
