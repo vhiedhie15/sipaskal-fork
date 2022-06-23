@@ -10,7 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/sipaskal/favicon_landak-32x32.png" rel="icon">
+  {{-- <link href="assets/img/sipaskal/favicon_landak-32x32.png" rel="icon"> --}}
+  <link href="assets/img/sipaskal/sipaskal-logo.png" style="width: 32px" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -41,9 +42,14 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div id="logo">
-        <h1><a href="index.html"><img src="assets/img/sipaskal/favicon_landak-32x32.png" alt="" title="" /></a><a href="index.html"><span>SIPASKAL</span><!-- ipaskal --></a></h1>
+        <h1>
+          <a href="{{ url('/') }}">
+            <img src="assets/img/sipaskal/favicon_landak-32x32.png" alt="" title="" />
+            <span>SIPASKAL</span>
+          </a>
+        </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-         <!-- <a href="index.html"><img src="assets/img/sipaskal/favicon.ico" alt="" title="" /></a> -->
+        <!-- <a href="index.html"><img src="assets/img/sipaskal/favicon.ico" alt="" title="" /></a> -->
       </div>
     
 
