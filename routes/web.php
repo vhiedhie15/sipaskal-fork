@@ -23,6 +23,6 @@ Auth::routes();
 Route::resource('users', \App\Http\Controllers\UserController::class)
     ->middleware('auth');
 
-Route::get('/home', function() {
-    return view('home');
-})->name('home')->middleware('auth');
+Route::get('/dashboard', function() {
+    return view('adminkab.index');
+})->name('dashboard')->middleware('auth');
