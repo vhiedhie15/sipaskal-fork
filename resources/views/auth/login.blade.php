@@ -45,14 +45,18 @@
         </form>
       </div>
       <!-- /.card-body -->
-      <div class="card-body">
+      {{-- <div class="card-body"> --}}
         <div class="social-auth-links text-center mt-2 mb-3">
-            <a href="https://diskominfo.landakkab.go.id/">
-                <img src="assets/img/login/diskominfolandak3.png" alt="Diskominfo Landak" style="width:250px">
-            </a>
+          <a href="https://landakkab.go.id/">
+            <img src="assets/img/sipaskal/logo_landak.png" alt="Pemda Kab. Landak" style="width:70px">
+          </a>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <a href="https://diskominfo.landakkab.go.id/">
+            <img src="assets/img/login/diskominfolandak3.png" alt="Diskominfo Landak" style="width:200px">
+          </a>
         </div>
         <!-- /.social-auth-links -->
-      </div>
+      {{-- </div> --}}
     </div>
     <!-- /.card -->
   </div>
