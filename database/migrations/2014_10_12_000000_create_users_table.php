@@ -29,7 +29,8 @@ return new class extends Migration
             $table->integer('id_jabatan')->unsigned()->index();
             $table->string('pangkat');
             $table->string('jenis_user');
-            $table->string('foto');
+            $table->string('foto')->default('user.jpg');
+            $table->enum('active', [0, 1])->default(1);
             $table->rememberToken();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
