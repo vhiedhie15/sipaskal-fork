@@ -36,6 +36,12 @@ return new class extends Migration
         });
 
         Schema::table('jabatans', function (Blueprint $table) {
+            $table->foreign('id_opd')
+            ->references('id')
+            ->on('opds')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
             $table->foreign('id_unitkerja')
             ->references('id')
             ->on('unitkerjas')

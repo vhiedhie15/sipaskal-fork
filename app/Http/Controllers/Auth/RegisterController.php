@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'id_jabatan' => '1',
             'pangkat' => 'Pelaksana',
             'jenis_user' => 'PNS',
-            'foto' => 'blob',
+            'foto' => 'user.jpg',
         ]);
     }
 }

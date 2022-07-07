@@ -16,7 +16,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Dashboard</h1>
+          <h1 class="m-0">Pengguna</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -38,30 +38,57 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with default features</h3>
+              <h3 class="card-title">Daftar Data Pengguna</h3>
+              <div class="card-tools">
+                <a href="{{ URL::to('/users/create') }}">
+                  <button type="button" class="btn btn-block btn-success btn-sm">
+                    <i class="fas fa-user-plus"></i> Tambah Pengguna
+                  </button>
+                </a>
+              </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>Hak Akses</th>
+                  <th>Nama</th>
+                  <th>Email</th>
+                  <th>Nama Pengguna</th>
+                  <th>Instansi / Unit Kerja</th>
+                  <th>Jabatan</th>
+                  <th width="10"><i class="fas fa-wrench"></i></th>
                 </tr>
                 </thead>
                 <tbody>
+                @foreach ($user as $item)
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
+                  <td>{{ $item->nama_role }}</td>
+                  <td>{{ $item->nama }}</td>
+                  <td>{{ $item->email }}</td>
+                  <td>{{ $item->username }}</td>
+                  <td>{{ $item->nama_opd }} / {{ $item->nama_unitkerja }}</td>
+                  <td>{{ $item->nama_jabatan }}</td>
+                  <td align="center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary btn-block dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="{{ URL::to('/users/'.$item->id) }}">
+                            <i class="fa fa-info-circle"></i>
+                              Detail
+                          </a>
+                          <a class="dropdown-item" href="{{ URL::to('/users/'.$item->id.'/edit') }}">
+                            <i class="fa fa-edit"></i>
+                              Edit
+                          </a>
+                      </div>
+                    </div>
                   </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
                 </tr>
+                @endforeach
+                </tbody>
               </table>
             </div>
             <!-- /.card-body -->
@@ -94,8 +121,7 @@
 <script>
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      "responsive": true, "lengthChange": true, "autoWidth": false,
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,

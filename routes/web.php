@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('users', \App\Http\Controllers\UserController::class)
-    ->middleware('auth');
+Route::group(['middleware' => 'auth'], function(){
+    Route::resource('users', \App\Http\Controllers\UserController::class);
+    // Route::get('users/create/getUnitkerja/{id}', function ($id) {
+    //     $unitkerja = App\Models\Unitkerja::where('id_opd',$id)->get();
+    //     return response()->json($unitkerja);
+    // });
+    // Route::get('users/create/getunitkerja/{id}', [\App\Http\Controllers\UserController::class, 'getUnitkerja'])->name('getUnitkerja');
+    Route::get('users/create/getunitkerja/', [\App\Http\Controllers\UserController::class, 'getUnitkerja'])->name('getUnitkerja');
+});
+
 
 Route::get('/dashboard', function() {
     return view('adminkab.index');
